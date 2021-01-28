@@ -10,14 +10,9 @@ import Button from '../../components/button';
 import { Container, Content, Background } from './style';
 
 const SignUp: React.FC = () => {
-  const [isFocused, setIsFocused] = useState(false);
   const handleSubmit = (data: Record<string, unknown>): void => {
     console.log(data);
   };
-
-  const handleBlur = useCallback(() => {
-    setIsFocused(true);
-  }, []);
 
   return (
     <>
