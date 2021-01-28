@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { FiMail, FiLock, FiUser, FiArrowLeft } from 'react-icons/fi';
 import { Form } from '@unform/web';
 
@@ -10,9 +10,14 @@ import Button from '../../components/button';
 import { Container, Content, Background } from './style';
 
 const SignUp: React.FC = () => {
+  const [isFocused, setIsFocused] = useState(false);
   const handleSubmit = (data: Record<string, unknown>): void => {
     console.log(data);
   };
+
+  const handleBlur = useCallback(() => {
+    setIsFocused(true);
+  }, []);
 
   return (
     <>
